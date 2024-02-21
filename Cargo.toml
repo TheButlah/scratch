@@ -1,0 +1,6 @@
+[workspace]
+resolver = "2"
+members = ["foo", "bar"]
+
+[workspace.dependencies]
+color-eyre = "0.6.2"

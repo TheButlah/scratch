@@ -1,0 +1,10 @@
+[package]
+name = "bar"
+version = "0.0.0"
+license = "MIT OR (Apache-2.0 WITH LLVM-exception)"
+edition = "2021"
+rust-version = "1.75.0"
+
+[dependencies]
+color-eyre.workspace = true
+foo.path = "../foo"
