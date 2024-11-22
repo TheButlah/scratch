@@ -1,16 +1,27 @@
-# Example for `device`: `/dev/disk/by-id/some-disk-id`
-{ device }: {
+# Comes from 
+# https://github.com/nix-community/disko-templates/blob/6b12e5fe/single-disk-ext4/disko-config.nix
+
+# USAGE in your configuration.nix.
+# Update devices to match your hardware.
+# {
+#  imports = [ ./disko-config.nix ];
+#  disko.devices.disk.main.device = "/dev/sda";
+# }
+{
   disko.devices = {
     disk = {
       main = {
-        inherit device;
         type = "disk";
         content = {
           type = "gpt";
           partitions = {
+            boot = {
+              size = "1M";
+              type = "EF02"; # for grub MBR
+            };
             ESP = {
+              size = "1G";
               type = "EF00";
-              size = "500M";
               content = {
                 type = "filesystem";
                 format = "vfat";
