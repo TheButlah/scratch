@@ -1,7 +1,7 @@
 { inputs, pkgs, modulesPath, lib, system, username, hostname, ... }: {
   imports = [
     # "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
-	./hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   nix = {
@@ -35,6 +35,14 @@
     loader.grub.efiInstallAsRemovable = true;
     # loader.grub.device is set by disko automatically
     # END disko
+
+    # Docs: https://elixir.bootlin.com/linux/v6.12.1/source/Documentation/admin-guide/serial-console.rst
+    # All consoles listed here will be usable and are automatically logged into.
+    # last console device is the one that gets boot logs. So in this case, serial.
+    kernelParams = [
+      "console=tty1"
+      "console=ttyS0,115200"
+    ];
 
     # Needed for https://github.com/NixOS/nixpkgs/issues/58959
     supportedFilesystems = lib.mkForce [ "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" ];
