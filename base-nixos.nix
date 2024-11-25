@@ -1,6 +1,7 @@
 { inputs, pkgs, modulesPath, lib, system, username, hostname, ... }: {
   imports = [
     # "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
+	./hardware-configuration.nix
   ];
 
   nix = {
