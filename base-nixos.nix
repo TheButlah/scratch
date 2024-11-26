@@ -38,14 +38,11 @@
 
     # Docs: https://elixir.bootlin.com/linux/v6.12.1/source/Documentation/admin-guide/serial-console.rst
     # All consoles listed here will be usable and are automatically logged into.
-    # last console device is the one that gets boot logs. So in this case, serial.
+    # last console device is the one that gets boot logs. So in this case, vga.
     kernelParams = [
-      "console=tty1"
       "console=ttyS0,115200"
+      "console=tty1"
     ];
-
-    # Needed for https://github.com/NixOS/nixpkgs/issues/58959
-    supportedFilesystems = lib.mkForce [ "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" ];
   };
 
   # Define a user account. Don't forget to set a password with ‘pas.
