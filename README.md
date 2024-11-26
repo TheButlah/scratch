@@ -69,3 +69,6 @@ sudo nix --extra-experimental-features 'nix-command flakes' \
 ./result
 ```
 
+## License
+
+Licensed under the [MIT-0 License](LICENSE-MIT-0).
