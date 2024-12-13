@@ -58,14 +58,14 @@ Example:
 ```bash
 nix --extra-experimental-features 'nix-command flakes' \
   run github:nix-community/nixos-anywhere -- \
-  --flake github:worldcoin/orb-software#vm ubuntu@34.224.39.95 -i ~/ssh-key.pem
+  --flake github:worldcoin/orb-software#ryan-worldcoin-hil ubuntu@34.224.39.95 -i ~/ssh-key.pem
 ```
 
 # Building a NixOS machine image
 
 ```bash
 sudo nix --extra-experimental-features 'nix-command flakes' \
-  build github:thebutlah/scratch#nixosConfigurations.vm.config.system.build.diskoImagesScript
+  build github:thebutlah/scratch#nixosConfigurations.ryan-worldcoin-hil.config.system.build.diskoImagesScript
 ./result
 ```
 
