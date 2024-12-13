@@ -9,7 +9,7 @@ Then run the following, being sure to replace /dev/sda with the correct disk nam
 ```bash
 sudo nix --extra-experimental-features 'nix-command flakes' \
   run github:thebutlah/scratch#disko-install \
-  -- -f github:thebutlah/scratch#vm --disk main /dev/sda
+  -- -f github:thebutlah/scratch#ryan-worldcoin-hil --disk main /dev/sda
 ```
 
 ## Remotely, via nixos-anywhere (Recommended)
