@@ -30,6 +30,7 @@ The target requires:
 * It must have an account with sudo rights and the builder's ssh pub key added to that account
 * It must be accessible over the internet from the builder. AKA either on the same LAN,
   or have its ports forwarded.
+* It needs to be connected to Ethernet, NOT wifi. A wifi-only connection will cause the installation to fail partway through.
 
 The builder requires:
 * The same architecture as the target machine (x86_64-linux, for now).
