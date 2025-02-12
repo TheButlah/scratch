@@ -23,7 +23,7 @@ jobs:
       - name: Build diskoImagesScript
         run: |
           set -Eeuxo pipefail
-          nix build .#nixosConfigurations.ryan-worldcoin-hil.config.system.build.diskoImagesScript
+          nix build .#nixosConfigurations.liveusb.config.system.build.diskoImagesScript
           ls -alhR ./result
       - name: Run diskoImagesScript
         run: |
@@ -34,7 +34,7 @@ jobs:
         run: |
           set -Eeuxo pipefail
           mkdir -p artifacts
-          zstd --compress main.raw -o artifacts/nixos.raw.zst
+          zstd --compress liveusb.raw -o artifacts/liveusb.raw.zst
           ls -aRsh artifacts
       - name: Upload Artifacts
         uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # pin@v4.3.3
