@@ -40,7 +40,7 @@
       packages.${system} = {
         disko = disko.packages.${system}.disko;
         disko-install = disko.packages.${system}.disko-install;
-        # buildLiveUsb = self.nixosConfigurations.self.config.system.build.diskoImagesScript;
+        # liveusb = self.nixosConfigurations.self.config.system.build.diskoImagesScript;
       };
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
     };
