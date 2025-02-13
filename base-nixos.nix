@@ -28,11 +28,11 @@
     kernelPackages = pkgs.linuxPackages_latest;
     # BEGIN recommendations from disko:
     # https://github.com/nix-community/disko/blob/abc8baff/docs/quickstart.md
-    #loader.systemd-boot.enable = true;
-    #loader.efi.canTouchEfiVariables = true;
-    loader.grub.enable = true;
-    loader.grub.efiSupport = true;
-    loader.grub.efiInstallAsRemovable = true;
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    # loader.grub.enable = true;
+    # loader.grub.efiSupport = true;
+    # loader.grub.efiInstallAsRemovable = true;
     # loader.grub.device is set by disko automatically
     # END disko
 
